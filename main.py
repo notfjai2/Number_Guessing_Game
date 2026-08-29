@@ -6,10 +6,13 @@ number = random.randint(1, maxn)
 print("Welcome to number guessing game!\nGhess only from 1-20")
 guess = None
 while guess != number:
-  guess = int(input("Your guess: "))
-  if guess > number:
-    print("Your guess is too high")
-  elif guess < number:
-    print("Your guess is too low")
-  else:
-    print(f"Congratulations! The number is {number}")
+  try:
+    guess = int(input("Your guess: "))
+    if guess > number:
+      print("Your guess is too high")
+    elif guess < number:
+      print("Your guess is too low")
+    else:
+      print(f"Congratulations! The number is {number}")
+  except ValueError:
+    print("Please enter a valid number.")
